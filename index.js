@@ -19,8 +19,12 @@ function verifyJwt(req, res, next) {
     })
 }
 
+app.get("/", (req, res, next) => {
+    res.send("Cadastrado no heroku")
+})
+
 app.get("/AppJwt", verifyJwt, (req, res, next) => {
-    res.set({'Content-Type': 'text/plain'})
+    res.set({ 'Content-Type': 'text/plain' })
     console.log('chamada de usuario ' + req.userId)
     res.send("Hello World")
 })
