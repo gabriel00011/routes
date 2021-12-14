@@ -3,6 +3,7 @@ const app = express()
 const bodyParser = require("body-parser")
 const jwt = require("jsonwebtoken")
 const secret = "password"
+const port = process.env.PORT || 8081
 
 app.use(bodyParser.urlencoded({ extended: true }))
 
@@ -33,6 +34,6 @@ app.post("/login", (req, res, next) => {
     res.status(401).end()
 })
 
-app.listen(8081, () => {
+app.listen(port, () => {
     console.log("execute>>>")
 })
